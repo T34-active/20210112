@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title></title>
+		<style>
+			*{
+            list-style: none;
+        }
+        .finish{
+            color:gray;
+            text-decoration: line-through;
+        }
+    </style>
+	</head>
+
+	<body>
+		<div id="box">
+			<h1>{{title}}</h1>
+			<p>
+				任务总数{{mission.length}};还有{{no()}}未完成;【<a href="javascript:;" @click="del()">完成</a>】
+			</p>
+			<ul>
+				<li v-for="(item,index) in mission" :key="mission.index">
+					<input type="checkbox" v-model="item.finish">
+					<span v-show="!item.Edit" :class="{finish:item.finish}" @click="edit(index)">{{item.title}}</span>
+					<input type="text" v-show="item.Edit" v-model="item.title" @blur="item.Edit=false">
+				</li>
+			</ul>
+			<p>
+				<input type="text" v-model="msg">
+				<button @click="add()">添加</button>
+			</p>
+		</div>
+		<script src="./js/vue.js"></script>
+		<script>
+			let vm = new Vue({
+				el: "#box",
+				data: {
+					title: "任务列表",
+					mission: [{
+							title: "语文",
+							finish: false,
+							Edit: false
+						},
+						{
+							title: "数学",
+							finish: false,
+							Edit: false
+						},
+						{
+							title: "英语",
+							finish: false,
+							Edit: false
+						}
+					],
+					msg: ""
+				},
+				methods: {
+					//添加
+					add() {
+						this.mission.push({
+							title: this.msg,
+							finish: false,
+							edit:true
+						});
+						this.msg = "";
+					},
+					//计算未完成
+					no() {
+						let count = 0;
+						this.mission.forEach(item => {
+							if (!item.finish) count++;
+						})
+						return count;
+					},
+					//完成按钮，删除
+					del() {
+						let newArr = this.mission;
+						this.mission = [];
+						newArr.forEach(item => {
+							if (!item.finish) {
+								this.mission.push(item)
+							}
+						})
+					},
+					edit(index) {
+						if (this.mission[index].finish) return; //完成的不执行，不能点击
+						// console.log(index);
+						//点击修改当前标签的EDIT为true
+						this.mission[index].Edit = true;
+					}
+				}
+			})
+		</script>
+	</body>
+</html>
