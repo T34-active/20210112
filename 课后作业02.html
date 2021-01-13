@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			*{margin: 0;padding: 0;list-style: none;}
+			a{
+				text-decoration: none;
+				color: #fff;
+			}
+			h4{
+				width: 150px;
+				padding:5px 5px ;
+				color: #fff;
+				background-color: darkred;
+			}
+			li{
+				width: 150px;
+				padding: 3px 5px;
+				background-color:#c81622;
+				display: flex;
+				align-items: center;
+				font-size: 15px;
+				justify-content: space-between;
+			}
+			span{
+				background:url(image/bg.png) no-repeat;
+				width: 10px;
+				height: 10px;
+				background-position: center; 
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<h4>全部商品分类</h4>
+			<ul>
+				<li v-for="(item,index) in arr">
+					<a href="#">{{item.title}}</a> <span></span>
+				</li>
+			</ul>
+		</div>
+		<script src="js/vue.js"></script>
+		<script>
+			let vm = new Vue({
+				el:'#box',
+				data:{
+					arr:[
+						{title:'家用电器'},
+						{title:'手机 数码 相机'},
+						{title:'电脑 办公'},
+						{title:'家居 家具 家装'},
+						{title:'男装 女装 珠宝'},
+						{title:'鞋靴 箱包 钟表'},
+					]
+				},
+				methods:{
+					
+				}
+			})
+		</script>
+	</body>
+</html>
