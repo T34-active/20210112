@@ -6,11 +6,16 @@
 		<meta http-equiv="X-UA-Compatible" content="ie=edge">
 		<title>当当网</title>
 		<style type="text/css">
+<<<<<<< HEAD
 			* {
+=======
+			*{
+>>>>>>> 254a58b0cfbbe54f51f094c9ca146df4b558627d
 				margin: 0;
 				padding: 0;
 				list-style: none;
 			}
+<<<<<<< HEAD
 			
 			#box {
 				width: 500px;
@@ -60,11 +65,35 @@
 				font-size: 20px;
 				border-bottom: 2px solid gray;
 			}
+=======
+			.top{
+				overflow: hidden;
+				background-color: #5b9bb7;
+				height: 50px;
+			}
+			i{
+				float: right;
+				background-color: #47889b;
+				margin-left: 20px;
+				width: 30px;
+				height: 30px;
+				margin-top: 10px;
+			}
+			i img{
+				width: 100%;
+				height: 100%;
+			}
+			.active{
+				background-color: #be4a92;
+				
+			}
+>>>>>>> 254a58b0cfbbe54f51f094c9ca146df4b558627d
 		</style>
 	</head>
 	<body>
 		<div id="box">
 			<div class="top">
+<<<<<<< HEAD
 				<span :class="{active:isClass}" @click="isClass=true"></span>
 				<span :class="{active:!isClass}" @click="isClass=false"></span>
 			</div>
@@ -74,6 +103,19 @@
 					<div v-show="!isClass">{{item.title}}</div>
 				</li>
 			</ul>
+=======
+				<i><img src="image/righticon.png"/></i>
+				<i><img src="image/lefticon.png"/></i>
+			</div>
+			<ul>
+				<li v-for="item in arr">
+				<img v-bind="{src:item.image.large}" >
+				</li>
+			</ul>
+			<div>
+				
+			</div>
+>>>>>>> 254a58b0cfbbe54f51f094c9ca146df4b558627d
 		</div>
 	</body>
 	<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
@@ -129,8 +171,12 @@
 							"small": "http://img3m9.ddimg.cn/33/0/25261269-1_l_3.jpg"
 						}
 					}
+<<<<<<< HEAD
 				],
 				isClass: true
+=======
+				]
+>>>>>>> 254a58b0cfbbe54f51f094c9ca146df4b558627d
 			},
 			methods:{
 				
