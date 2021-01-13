@@ -6,22 +6,17 @@
 		<meta http-equiv="X-UA-Compatible" content="ie=edge">
 		<title>当当网</title>
 		<style type="text/css">
-<<<<<<< HEAD
 			* {
-=======
-			*{
->>>>>>> 254a58b0cfbbe54f51f094c9ca146df4b558627d
 				margin: 0;
 				padding: 0;
 				list-style: none;
 			}
-<<<<<<< HEAD
-			
+
 			#box {
 				width: 500px;
 				margin: 0 auto;
 			}
-			
+
 			.top {
 				display: flex;
 				height: 40px;
@@ -29,49 +24,55 @@
 				align-items: center;
 				background-color: #5b9bb7;
 			}
-			
+
 			.top span {
 				width: 30px;
 				height: 30px;
 				margin-left: 10px;
 				background-color: #4a8ca2;
 			}
+
 			.top span:first-of-type {
 				background: url(image/lefticon.png) no-repeat;
 				background-position: center center;
 			}
-			
+
 			.top span:last-of-type {
 				background: url(image/righticon.png) no-repeat;
 				background-position: center center;
 			}
+
 			.top span.active {
 				background-color: #bc4e95;
 			}
-			.left{
+
+			.left {
 				float: left;
 				width: 240px;
 				padding: 5px;
 			}
-			.right{
+
+			.right {
 				width: 100px;
 				height: 100px;
-				
+
 			}
-			.dis{
+
+			.dis {
 				display: flex;
 				padding: 5px;
 				color: gray;
 				font-size: 20px;
 				border-bottom: 2px solid gray;
 			}
-=======
-			.top{
+
+			.top {
 				overflow: hidden;
 				background-color: #5b9bb7;
 				height: 50px;
 			}
-			i{
+
+			i {
 				float: right;
 				background-color: #47889b;
 				margin-left: 20px;
@@ -79,21 +80,21 @@
 				height: 30px;
 				margin-top: 10px;
 			}
-			i img{
+
+			i img {
 				width: 100%;
 				height: 100%;
 			}
-			.active{
+
+			.active {
 				background-color: #be4a92;
-				
+
 			}
->>>>>>> 254a58b0cfbbe54f51f094c9ca146df4b558627d
 		</style>
 	</head>
 	<body>
 		<div id="box">
 			<div class="top">
-<<<<<<< HEAD
 				<span :class="{active:isClass}" @click="isClass=true"></span>
 				<span :class="{active:!isClass}" @click="isClass=false"></span>
 			</div>
@@ -103,19 +104,17 @@
 					<div v-show="!isClass">{{item.title}}</div>
 				</li>
 			</ul>
-=======
-				<i><img src="image/righticon.png"/></i>
-				<i><img src="image/lefticon.png"/></i>
-			</div>
-			<ul>
-				<li v-for="item in arr">
-				<img v-bind="{src:item.image.large}" >
-				</li>
-			</ul>
-			<div>
-				
-			</div>
->>>>>>> 254a58b0cfbbe54f51f094c9ca146df4b558627d
+			<i><img src="image/righticon.png" /></i>
+			<i><img src="image/lefticon.png" /></i>
+		</div>
+		<ul>
+			<li v-for="item in arr">
+				<img v-bind="{src:item.image.large}">
+			</li>
+		</ul>
+		<div>
+
+		</div>
 		</div>
 	</body>
 	<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
@@ -171,16 +170,13 @@
 							"small": "http://img3m9.ddimg.cn/33/0/25261269-1_l_3.jpg"
 						}
 					}
-<<<<<<< HEAD
 				],
 				isClass: true
-=======
-				]
->>>>>>> 254a58b0cfbbe54f51f094c9ca146df4b558627d
-			},
-			methods:{
-				
-			}
+			]
+		},
+		methods: {
+
+		}
 		})
 	</script>
 </html>
